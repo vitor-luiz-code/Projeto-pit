@@ -1,2 +1,2 @@
 # Projeto-pit
-Reimplementaçao do Micrograd  em c++
+Reimplementação do Micrograd  em c++
