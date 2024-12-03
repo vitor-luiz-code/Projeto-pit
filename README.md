@@ -78,7 +78,7 @@ int main()
   ret.clean_up()
   // uso posterior de a e b indefinidos
 }
-
+``
 # Operações suportadas
 
 Até o momento são suportadas +,-,*, / e ^ entre as combinações possíveis entre Value e Value , Scalar e Scalar, ponteiro para Value e Value e  ponteiro para Value e Scalar (trocando as ordens também vale). Scalar e Scalar requer uma atenção pois eles não retornam Value e sim Scalar e a idéia é e as funções sobrecarregadas impõem isso é que Scalar seja sempre por valor.
