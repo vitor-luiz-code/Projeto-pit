@@ -93,7 +93,7 @@ então se chamar clean_up e após fazer um forward ou backward com o grafo está
 No arquivo: teste_melhorias tem exemplos simples.
 
 Uma limitação importante, pelo fato de ter sobrecarregado o operador xor para ser utilizado como pontenciação sua associatividade nao condiz com a operação 
-então é recomendado que use parenteses por exemplo a * b ^ c a não ser que vocẽ queira esta expressão [a * b ] ^ c e sim a * [b ^ c] use parênteses para que isso funcione corretamente.
+então é recomendado que use parenteses por exemplo a * b ^ c a não ser que você queira esta expressão [a * b ] ^ c e sim a * [b ^ c] use parênteses para que isso funcione corretamente.
 
 # Idéias para implementação futura e melhorias
 Uma gerência de memória adequada e cálculo de derivadas de Matrizes.  
