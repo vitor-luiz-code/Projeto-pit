@@ -6,9 +6,9 @@ O Micrograd é uma implementação de um auto diferenciador em Python escrito po
 
 Esta reimplementação do Micrograd em C++ tem dois objetivos principais:
 
-1 -> Aprender C++: Explorar os recursos da linguagem, como sobrecarga de operadores e gerenciamento de memória.
+1. Aprender C++: Explorar os recursos da linguagem, como sobrecarga de operadores e gerenciamento de memória.
 
-2 -> Construção Natural do Grafo Computacional: Utilizar a sobrecarga de operadores para representar operações matemáticas de forma intuitiva e construir automaticamente o grafo computacional durante a avaliação de expressões.
+2. Construção Natural do Grafo Computacional: Utilizar a sobrecarga de operadores para representar operações matemáticas de forma intuitiva e construir automaticamente o grafo computacional durante a avaliação de expressões.
 
 # Como Funciona -> Grafo Computacional
 
@@ -17,9 +17,9 @@ O núcleo do Micrograd é o grafo computacional, que organiza as operações mat
 Ordenação Topológica
 Para calcular as derivadas parciais, o grafo computacional é linearizado por meio de um processo chamado ordenação topológica. Esse processo gera uma sequência linear dos nós, respeitando as dependências. Essa ordem é usada em duas passagens principais:
 
-1 -> Forward Pass: Avalia a expressão armazenada no grafo, propagando valores dos nós de entrada até os nós de saída.
+1. Forward Pass: Avalia a expressão armazenada no grafo, propagando valores dos nós de entrada até os nós de saída.
 
-2 -> Backward Pass: Calcula as derivadas parciais de cada nó em relação às suas dependências, seguindo a ordem inversa do forward.
+2. Backward Pass: Calcula as derivadas parciais de cada nó em relação às suas dependências, seguindo a ordem inversa do forward.
 
 Regras de Derivadas
 
@@ -33,11 +33,11 @@ A biblioteca possui duas classes principais a classe Value e a classe Scalar
 
 Ela é o núcleo da estrutura do grafo computacional. Ela desempenha vários papéis fundamentais:
 
-1 -> Representação das Variáveis: Cada instância de Value pode representar uma variável no grafo.
-2 -> Operações Matemáticas: Serve como tipo base para a execução de operações matemáticas.
-3 -> Dependências: Armazena as entradas de que depende (por exemplo, em uma expressão como a=x+y, a é um nó temporário que depende de x e y).
-4 -> Resultados e Gradientes: Mantém o valor da expressão (resultado de uma operação anterior) e o gradiente associado para o cálculo do gradiente reverso (backward pass).
-5 -> Funções de Passagem: Inclui ponteiros para as funções de forward e backward pass, garantindo que o grafo possa ser percorrido de forma eficiente.
+1. Representação das Variáveis: Cada instância de Value pode representar uma variável no grafo.
+2. Operações Matemáticas: Serve como tipo base para a execução de operações matemáticas.
+3. Dependências: Armazena as entradas de que depende (por exemplo, em uma expressão como a=x+y, a é um nó temporário que depende de x e y).
+4. Resultados e Gradientes: Mantém o valor da expressão (resultado de uma operação anterior) e o gradiente associado para o cálculo do gradiente reverso (backward pass).
+5. Funções de Passagem: Inclui ponteiros para as funções de forward e backward pass, garantindo que o grafo possa ser percorrido de forma eficiente.
 
 Com essa estrutura, a classe Value é essencial para construir, armazenar e manipular o grafo de dependências, gerenciando tanto os valores das expressões quanto suas derivadas.
 
@@ -45,11 +45,11 @@ Com essa estrutura, a classe Value é essencial para construir, armazenar e mani
 
 A classe Scalar desempenha dois papéis principais:
 
-1 -> Redução de Código: Simplifica a implementação ao permitir que os tipos primitivos da linguagem (como int, float, double, etc.) sejam representados como objetos. Isso evita a necessidade de sobrecarregar manualmente as operações matemáticas básicas (como +, -, *, /, ^) para cada tipo primitivo. Em vez disso, essas operações são implementadas diretamente para a classe Scalar.
+1. Redução de Código: Simplifica a implementação ao permitir que os tipos primitivos da linguagem (como int, float, double, etc.) sejam representados como objetos. Isso evita a necessidade de sobrecarregar manualmente as operações matemáticas básicas (como +, -, *, /, ^) para cada tipo primitivo. Em vez disso, essas operações são implementadas diretamente para a classe Scalar.
 
 Exemplo: Operações entre inteiros e objetos Value podem ser tratadas automaticamente por meio de conversões para Scalar, reduzindo a complexidade do código.
 
-2 -> Representação de Constantes: Também é utilizada para representar constantes dentro do grafo computacional, facilitando a manipulação de valores fixos durante os cálculos.
+2. Representação de Constantes: Também é utilizada para representar constantes dentro do grafo computacional, facilitando a manipulação de valores fixos durante os cálculos.
 
 # Gerência de memória
 
@@ -89,7 +89,7 @@ e também suporte a criação de um grafo estático apartir de uma expressao per
 dizer que o grafo compartilha a mesma memória que foi utilizada na criacao da expressão que foi salva na variavel local que guarda a referência ao grafo
 então se chamar clean_up e após fazer um forward ou backward com o grafo estático (variavel do tipo static_graph que é retornada por uma função membro da classe Value chamada freeze_graph) terá comportamento indefinido.
 
-.No arquivo: teste_melhorias tem exemplos simples.
+No arquivo: teste_melhorias tem exemplos simples.
 
 Uma limitação importante, pelo fato de ter sobrecarregado o operador xor para ser utilizado como pontenciação sua associatividade nao condiz com a operação 
 então é recomendado que use parenteses por exemplo a * b ^ c a não ser que vocẽ queira esta expressão [a * b ] ^ c e sim a * [b ^ c] use parênteses para que isso funcione corretamente.
