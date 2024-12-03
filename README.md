@@ -74,7 +74,7 @@ int main()
   value *b = new value(3);
   scalar constante = scalar(2);
   value ret = a * (*b) + c;
-  // libreando a memória 
+  // liberando a memória 
   ret.clean_up()
   // uso posterior de a e b indefinidos
 }
