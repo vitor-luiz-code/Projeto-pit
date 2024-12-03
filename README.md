@@ -85,8 +85,9 @@ int main()
 Até o momento são suportadas +,-,*, / e ^ entre as combinações possíveis entre Value e Value , Scalar e Scalar, ponteiro para Value e Value e  ponteiro para Value e Scalar (trocando as ordens também vale). Scalar e Scalar requer uma atenção pois eles não retornam Value e sim Scalar e a idéia é e as funções sobrecarregadas impõem isso é que Scalar seja sempre por valor.
 
 As derivadas atualmente suportadas são : cx, x^n, x^x , a^x, u/v, exp, log, sin, cos e tanh.
-e também suporte a criação de um grafo estático apartir de uma expressao permitindo forward apenas mudando os valores das variaveis e backward, vale 
-dizer que o grafo compartilha a mesma memória que foi utilizada na criacao da expressão que foi salva na variavel local que guarda a referência ao grafo
+
+E também suporte a criação de um grafo estático apartir de uma expressão permitindo forward apenas mudando os valores das variaáveis e backward, vale 
+dizer que o grafo compartilha a mesma memória que foi utilizada na criação da expressão que foi salva na variavel local que guarda a referência ao grafo
 então se chamar clean_up e após fazer um forward ou backward com o grafo estático (variavel do tipo static_graph que é retornada por uma função membro da classe Value chamada freeze_graph) terá comportamento indefinido.
 
 No arquivo: teste_melhorias tem exemplos simples.
