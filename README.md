@@ -51,7 +51,7 @@ Exemplo: Operações entre inteiros e objetos Value podem ser tratadas automatic
 
 2 -> Representação de Constantes: Também é utilizada para representar constantes dentro do grafo computacional, facilitando a manipulação de valores fixos durante os cálculos.
 
-# Gerênciade memória
+# Gerência de memória
 
 A gerência de memória, atualmente, é feita de forma manual e ainda apresenta certa complexidade. Isso ocorre porque parti do seguinte princípio: todas as variáveis devem ser alocadas dinamicamente para que "vivam" até o término do programa e possam ser acessadas entre chamadas de funções.
 
@@ -88,6 +88,5 @@ então se chamar clean_up e após fazer um forward ou backward com o grafo está
 Uma limitação importante, pelo fato de ter sobrecarregado o operador xor para ser utilizado como pontenciação sua associatividade nao condiz com a operação 
 então é recomendado que use parenteses por exemplo a * b ^ c a não ser que vocẽ queira esta expressão [a * b ] ^ c e sim a * [b ^ c] use parênteses para que isso funcione corretamente.
 
-# Ideias para implementação futura e melhorias 
-
-Uma gerẽncia de memória adequada e cálculo de derivadas de Matrizes.  
+# Ideias para implementação futura e melhorias
+Uma gerência de memória adequada e cálculo de derivadas de Matrizes.  
